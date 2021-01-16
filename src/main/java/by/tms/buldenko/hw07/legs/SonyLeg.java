@@ -1,7 +1,13 @@
 package by.tms.buldenko.hw07.legs;
 
+import java.util.Random;
+
 public class SonyLeg implements ILeg {
-    private int price;
+
+    Random random = new Random();
+    int randomNumber = random.nextInt(5)+1;
+
+    private int price = randomNumber;
 
     public SonyLeg(int price) {
         this.price = price;
@@ -12,11 +18,18 @@ public class SonyLeg implements ILeg {
 
     @Override
     public void step() {
-
+        System.out.println("Начинает приседать");
     }
 
     @Override
     public int getPrice() {
-        return 0;
+        return price;
+    }
+
+    @Override
+    public String toString() {
+        return "SonyLeg{" +
+                "price=" + price +
+                '}';
     }
 }
